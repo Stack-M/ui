@@ -1,0 +1,288 @@
+.library-section {
+    margin: 1rem 2.5rem;
+
+    .lib-name {
+        margin-bottom: 1rem;
+    }
+
+    .scroll-view {
+        width: 100%;
+        position: relative;
+        padding: 1rem 0;
+        height: calc(290px - 2rem);
+
+        .container {
+            display: flex;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            scroll-behavior: smooth;
+
+            .media-preview {
+                display: inline-flex;
+                width: 230px;
+                min-width: 230px;
+                height: 100%;
+                margin: 0 .5rem;
+                background: rgba(0,0,0,.4);
+                border-radius: 13px;
+                background-size: cover;
+                position: relative;
+
+                .overlay {
+                    opacity: 0;
+                    padding: .5rem;
+                    width: calc(100% - 1rem);
+                    border-radius: 13px;
+                    height: calc(100% - 1rem);
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transition: 100ms all ease-in;
+                    background: rgba(0,0,0,.6);
+                    color: #EDEDED;
+                    cursor: pointer;
+
+                    .name {
+                        font-size: .9rem;
+                        text-align: center;
+                    }
+                }
+    
+                &:hover .overlay {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .scroll-button-container {
+            position: absolute;
+            top: 1rem;
+            height: calc(100% - 2rem);
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+
+            &.left {
+                left: 0;
+                background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,.5));
+            }
+            &.right {
+                right: 0;
+                background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.5));
+            }
+        }
+    }
+
+    .list-view {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .media-preview {
+            display: inline-flex;
+            width: 230px;
+            min-width: 230px;
+            height: 290px;
+            margin: 1rem .9rem;
+            background: rgba(0,0,0,.4);
+            border-radius: 4px;
+            background-size: cover;
+            position: relative;
+
+            .overlay {
+                opacity: 0;
+                padding: .25rem;
+                width: calc(100% - .5rem);
+                border-radius: 4px;
+                height: calc(100% - .5rem);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: 100ms all ease-in;
+                background: rgba(0,0,0,.6);
+                color: #EDEDED;
+                cursor: pointer;
+
+                .name {
+                    font-size: .85rem;
+                    text-align: center;
+                }
+            }
+
+            &:hover .overlay {
+                opacity: 1;
+            }
+        }
+    }
+
+    .sneak-peek-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.67);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        cursor: default;
+
+        .sneak-peek {
+            width: 90%;
+            height: 90%;
+
+            .anime-banner {
+                width: calc(100% - (1.5rem + 230px + 1.5rem));
+                border-radius: 4px 4px 0 0;
+                background-size: cover;
+                height: 35%;
+                background-position: center center;
+                display: flex;
+                align-content: flex-start;
+                padding-left: calc(1.5rem + 230px + 1.5rem);
+
+                .button-container {
+                    display: flex;
+                    align-items: flex-end;
+                    padding-bottom: 1rem;
+
+                    .action-button {
+                        margin: 0 .5rem;
+                    }
+                }
+            }
+            .anime-details {
+                height: calc(65% - 2rem);
+                position: relative;
+                padding: 1rem;
+
+                .anime-cover-image {
+                    position: absolute;
+                    left: 1.5rem;
+                    width: 230px;
+                    height: 290px;
+                    top: calc(-290px / 2);
+                    border-radius: 13px;
+                }
+
+                .headers {
+                    margin-left: calc(1.5rem + 230px + 1.5rem);
+                    .tags {
+                        margin-top: .5rem;
+
+                        .anime-genre {
+                            margin: 0 .5rem;
+    
+                            &:first-child {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                    .anime-description {
+                        margin-top: .75rem;
+
+                        p {
+                            margin: .15rem 0;
+                        }
+                    }
+                }
+                .main-content {
+                    margin-top: .75rem;
+
+                    .episodes-preview {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.video-preview {
+    width: 373px;
+    min-width: 373px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 4px;
+    margin: 0 .75rem;
+    cursor: pointer;
+
+    .screen-cap {
+        background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+        height: 80%;
+        border-radius: 4px 4px 0 0;
+        width: 100%;
+        background-size: cover;
+        position: relative;
+
+        .duration {
+            position: absolute;
+            bottom: .25rem;
+            right: .3rem;
+            background: #363636;
+            color: #EDEDED;
+            font-size: .8rem;
+            padding: 2px 5px;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        .button-overlay {
+            position: absolute;
+            top: 0;
+            border-radius: 4px 4px 0 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.5);
+            opacity: 0;
+            transition: 1s all cubic-bezier(0.23, 1, 0.320, 1);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9;
+
+            .buttons {
+                & > * {
+                    margin: 0 .5rem;
+                }
+            }
+        }
+
+        &:hover {
+            .button-overlay {
+                opacity: 1;
+            }
+        }
+    }
+    .details {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: rgba(0, 0, 0,.8);
+        border-radius: 0 0 4px 4px;
+        padding: .1rem .5rem;
+        color: #ffffff;
+
+        .file-name {
+            opacity: .7;
+            font-size: .7rem;
+            margin: 0 0 .25rem 0;
+        }
+    }
+}

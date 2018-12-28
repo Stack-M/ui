@@ -1,0 +1,24 @@
+.settings-page {
+    padding-top: 64px;
+    .settings-type-container {
+        width: 40%;
+        margin: 1rem 30%;
+
+        .settings-card {
+            padding: .55rem 1rem;
+            width: calc(100% - 1.1rem);
+            margin: .5rem 0;
+
+            .title {
+                margin-bottom: .25rem;
+            }
+        }
+    }
+
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}

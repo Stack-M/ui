@@ -1,0 +1,182 @@
+.anime-view-page {
+    .anime-banner {
+        width: 100%;
+        background-size: cover;
+        height: 600px;
+        z-index: -2;
+    }
+    .graduation-gradient {
+        position: absolute;
+        top: 490px;
+        height: calc(100vh - 500px);
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,0));
+    }
+
+    .prelim-info {
+        margin-top: -125px;
+        width: 70%;
+        position: relative;
+        min-height: 380px;
+        margin-left: 15%;
+
+        .anime-cover-image {
+            width: 230px;
+            height: 290px;
+            background-size: cover;
+            position: absolute;
+            top: calc(-290px / 2);
+            left: .75rem;
+            border-radius: 4px;
+            box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: 2fr 8fr;
+            padding-top: 1rem;
+
+            .score-container {
+                margin-top: calc(290px / 2);
+                padding-left: .75rem;
+
+                .info-bit {
+                    margin: .5rem .75rem;
+
+                    .title {
+                        font-size: .8rem;
+                        color: #EDEDED;
+                    }
+                    .data {
+                        font-size: .75rem;
+                        color: #DEDEDE;
+
+                        &.source-name {
+                            text-transform: capitalize;
+                        }
+
+                        .studio {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .textual {
+                .genres {
+                    margin-top: .35rem;
+
+                    .genre {
+                        margin: 0 .25rem;
+                    }
+                }
+                .studios {
+                    margin-top: .35rem;
+                    color: #ffffff;
+                    font-size: .85rem;
+
+                    .studio {
+                        margin: 0 .25rem;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        &.secondary {
+                            opacity: .8;
+                        }
+                    }
+                }
+                .description {
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    .graph-info {
+        width: calc(70% - 2rem);
+        margin-left: 15%;
+        margin-top: 1.5rem;
+        padding: 1rem;
+    }
+
+    .characters-info {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        width: calc(70% - 2rem);
+        margin-left: 15%;
+        padding: 1rem;
+
+        .character-view {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+    
+            .character {
+                margin: calc(.75rem + 31px) 1.25rem .25rem 1.25rem;
+                width: calc(33.33% - 2.5rem);
+            }
+        }
+    }
+
+    .episodes {
+        margin: 1.5rem 15% 0;
+        width: calc(70% - 2rem);
+        padding: 1rem;
+
+        .episodes-container {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .video-preview {
+                margin: .5rem .75rem;
+            }
+        }
+    }
+
+    .character {
+        background: #363636;
+        width: 360px;
+        min-height: 100px;
+        color: #EDEDED;
+        position: relative;
+
+        .medium-char-image {
+            width: 100px;
+            height: 131px;
+            position: absolute;
+            bottom: .5rem;
+            left: .5rem;
+            border-radius: 4px;
+            background-size: cover;
+        }
+
+        .details {
+            margin-left: calc(.5rem + .5rem + 100px);
+            padding-top: .5rem;
+
+            .name {
+                font-size: .9rem;
+                margin: 0 0 .15rem 0;
+
+                .role {
+                    font-size: .8rem;
+                    text-transform: capitalize;
+                }
+            }
+            .native-name {
+                font-size: .75rem;
+                opacity: .8;
+            }
+        }
+    }
+}
+
+body.series-backdrop {
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}

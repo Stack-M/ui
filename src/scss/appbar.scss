@@ -1,0 +1,160 @@
+.bar-search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+
+    .search-container {
+        width: 50%;
+        padding: .5rem 1.25rem;
+        border-radius: 4px;
+        background: rgba(0,0,0,.45);
+        position: relative;
+        display: flex;
+        transition: 300ms all cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+        &:focus-within {
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            width: 70%;
+        }
+
+        .search-input {
+            background: transparent;
+            flex-grow: 1;
+            height: 100%;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: .9rem;
+            font-family: inherit;
+        }
+
+        .search-button {
+            background: transparent;
+            color: #FFF;
+            background: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .auto-suggest-container {
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        border-radius: 0 0 13px 13px;
+        min-height: 100px;
+        z-index: 50;
+        padding-bottom: 13px;
+        max-height: 400px;
+        overflow: auto;
+
+        .no-result-message {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            color: rgba(255,255,255,.7);
+            font-size: .8rem;
+        }
+
+        .search-result-item {
+            .anime-cover {
+                width: 100px;
+                height: 127px;
+                min-width: 100px;
+                border-radius: 4px;
+                background-size: cover;
+                display: none;
+            }
+            .details {
+                display: none;
+
+                .orignal-name {
+                    display: block !important;
+                }
+                .description {
+                    font-size: .85rem;
+                    margin-top: .1rem;
+                }
+            }
+            &:hover .anime-cover, &:hover .details {
+                display: block;
+            }
+            &:hover .small-view {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.app-toolbar {
+    position: relative;
+
+    .peripherials {
+        position: fixed;
+        top: 60px;
+        left: 33px;
+        animation-fill-mode: forwards;
+        animation-name: open-peripherials;
+        animation-duration: 300ms;
+        padding: .75rem;
+        animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+        .current-processes-display {
+            margin: .5rem 0;
+
+            .no-processes {
+                width: 100%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgba(255,255,255,.4);
+                font-size: .8rem;
+            }
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            // justify-content: space-around;
+
+            .action {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: .5rem .75rem;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: 100ms all cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                text-decoration: none;
+
+                &:hover {
+                    background: rgba(255,255,255,.1);
+                }
+
+                .name {
+                    font-size: .7rem;
+                    color: rgba(255,255,255,.6);
+                    margin-top: .25rem;
+                    user-select: none;
+                }
+            }
+        }
+    }
+}
+
+@keyframes open-peripherials {
+    0% {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    100% {
+        width: 330px;
+        height: 400px;
+        overflow: auto;
+    }
+}
