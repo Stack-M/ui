@@ -30,7 +30,7 @@
     "react-dom": "^16.6.1",
     "react-hls": "0.0.8",
     "react-router-dom": "^4.3.1",
-    "recharts": "^1.4.1",
+    "recharts": "^2.1.14",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
